@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
+
 import java.io.File;
 import org.apache.commons.io.FileUtils;
 import java.nio.charset.Charset;
@@ -20,7 +21,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.logging.Logger;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,13 +42,9 @@ public class MainActivity extends AppCompatActivity {
         EditTextItem = findViewById(R.id.EditTextItem);
         ToDoItems = findViewById(R.id.ToDoItems);
 
+
         loadItems();
 
-        items = new ArrayList<>();
-        items.add("Read Bible");
-        items.add("Go to Gym");
-        items.add("Study COSC 338");
-        items.add("Do CLCO 261 Homework");
 
         ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener() {
             @Override
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 saveItems();
             }
         };
-        final ItemsAdapter itemsAdapter = new ItemsAdapter(items, onLongClickListener);
+        itemsAdapter = new ItemsAdapter(items, onLongClickListener);
         ToDoItems.setAdapter(itemsAdapter);
         ToDoItems.setLayoutManager(new LinearLayoutManager(this));
 

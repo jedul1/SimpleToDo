@@ -65,7 +65,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder>{
                 @Override
                 public boolean onLongClick(View v) {
                     //Notify
-                    longClickListener.onItemLongClicked(getAdapterPosition());
+                    longClickListener.onItemLongClicked(getBindingAdapterPosition());
                     return true;
                 }
             });
